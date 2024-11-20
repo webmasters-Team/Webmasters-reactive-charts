@@ -1,0 +1,13 @@
+.module {
+    padding: 20px;
+  }
+  .module .chart-container {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+  }
+  .module input, .module button, .module .select, .module select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  

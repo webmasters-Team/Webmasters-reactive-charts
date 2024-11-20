@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webmasters small projects</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@2.2.1/bulma-slider/src/sass/index.sass">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.39.1/plotly.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js"></script>
+<body>
+    <div id="app" class="container">
+        <div class="columns module">
+          <div class="controls column-4">
+            <div class="control">
+              <button class="button is-primary" @click="addData()">add data</button>
+            </div>
+            <div class="control">
+              <input class="input is-success" type='color' v-model="chart.traces[0].line.color" />
+            </div>
+            <div class="control">
+              <input class="input is-success" type='text' v-model="chart.layout.xaxis.title" />
+            </div>
+            <div class="control">
+              <input class="input is-success" type='text' v-model="chart.layout.yaxis.title" />
+            </div>
+      
+            <div class="control">
+              <input class="input" type='number' min="2" max="10" v-model="chart.traces[0].line.width"></input>
+            </div>
+            <div class="control">
+              <div class="select">
+                <select v-model="chart.traces[0].line.shape">
+          <option value="line">line</option>
+          <option value="spline">spline</option>
+          <option value="hv">hv</option>
+      </select>
+              </div>
+      
+            </div>
+          </div>
+          <div class="chart-container column">
+            <reactive-chart :chart="chart"></reactive-chart>
+          </div>
+        </div>
+      </div>
+<script src="script.js"></script>    
+</body>
+</html>
